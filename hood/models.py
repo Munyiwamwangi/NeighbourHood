@@ -9,8 +9,15 @@ class neighborhood(models.Model):
     occupants = models.ForeignKey("User.Model", on_delete=models.CASCADE)
     admin = models.ForeignKey("UserManager.Model", on_delete=models.CASCADE)
     
-    def save_neighborhood(self):
+    def save_hood(self):
         self.save()
 
-    def delete_neighborhood(self):
+    def delete_hood(self):
         self.delete()
+        
+    def find_hoodbyname(cls, search_name):
+        hood = cls.objects.filter(title__icontains=search_name)
+        return hood
+
+    class Meta:
+        ordering = ['-id']
