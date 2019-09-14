@@ -83,7 +83,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-ROOT_URLCONF = 'neighbourhood.urls'
+ROOT_URLCONF = 'neighborhood.urls'
 
 TEMPLATES = [
     {
@@ -102,7 +102,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'neighbourhood.wsgi.application'
+WSGI_APPLICATION = 'neighborhood.wsgi.application'
 
 
 # Database

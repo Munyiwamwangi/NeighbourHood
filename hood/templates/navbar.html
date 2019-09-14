@@ -1,31 +1,61 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<nav class="navbar navbar-inverse">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="{% url 'nyumbani' %}">WebSiteName</a>
+	<div>
+			<nav style="background-color:green; color:cyan" class="mb-1 navbar navbar-expand-lg navbar-dark ">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+				aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="navbar-brand" href="{% url 'nyumbani' %}">NEIGHBOORHOOD</a>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="navbar-brand" href="{% url 'nyumbani' %}">Join Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="navbar-brand" href="{% url 'about' %}">About</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">Filter
+				</a>
+				<div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+					<a class="dropdown-item" href="{% url 'nyumbani' %}">Todays</a>
+					<a class="dropdown-item" href="{% url 'search_results' %}">Category</a>
+					<a class="dropdown-item" href="#">Location</a>
+				</div>
+			</li>
+		</ul>
+		<!-- <ul class="navbar-nav ml-auto nav-flex-icons">
+			<li class="nav-item">
+				<a class="nav-link waves-effect waves-light">
+					<i class="fab fa-twitter"></i>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link waves-effect waves-light">
+					<i class="fab fa-google-plus-g"></i>
+				</a>
+			</li>  -->
+			<!-- Adding a search form  -->
+			<form class="fl form-inline my-1" role="search" action="{% url 'search_results' %}">
+				<div class="md-form form-sm my-0">
+					<input class="form-control form-control-sm mr-sm-2 mb-0" type="text" placeholder="Search" name='image'
+					aria-label="Search">
+				</div>
+				<button class="btn btn-outline-white btn-sm my-0" type="submit">Search Category
+				</button>
+			</form>
 		</div>
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="{% url 'nyumbani' %}">Home</a></li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false">Filter
-			</a>
-			<div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-				<a class="dropdown-item" href="{% url 'home' %}">Todays</a>
-				<a class="dropdown-item" href="{% url 'search_results' %}">Category</a>
-				<a class="dropdown-item" href="#">Location</a>
-			</div>
-		</li>
-		<li><a href="#">Page 2</a></li>
-	</ul>
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href=""><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-		<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	</ul>
-</div>
+		<!-- search form end -->
+	</li>
+</ul>
 </nav>
-
+</div>
+<!-- Navbar  ENDS -->
 
 {% endblock content %}

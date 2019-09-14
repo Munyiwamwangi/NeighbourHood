@@ -5,7 +5,7 @@ from django.contrib.auth.models import User, UserManager
 # Create your models here.
 
 
-class Neighborhood(models.Model):
+class Neighboorhood(models.Model):
     hood_image = models.ImageField(upload_to='images/',  blank=True)
     hood_name = models.CharField(max_length=20)
     hood_location = models.CharField(max_length=20)
@@ -31,14 +31,14 @@ class Neighborhood(models.Model):
         ordering = ['-id']
 
 
-class Neighbor(models.Model):
+class People(models.Model):
     name = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     email = models.CharField(max_length=20)
     contact = models.CharField(max_length=12)
     profile_picture = models.ImageField(upload_to='images/', default = 'profdefault.jpg')
     bio = models.CharField(max_length=70)
     neighborhood = models.ForeignKey(
-        Neighborhood, on_delete=models.CASCADE, null=True)
+        Neighboorhood, on_delete=models.CASCADE, null=True)
 
     def save_profile(self):
         self.save()
@@ -53,16 +53,15 @@ class Neighbor(models.Model):
         self.save()
 
     def __str__(self):
-        return f'{Neighbor}'
+        return f'{People}'
 
 class Post(models.Model):
-    writer = models.ManyToManyField(User, null=True)
     title = models.CharField(max_length=70)
-    contact = models.OneToOneField(Neighbor, on_delete=models.CASCADE)
+    contact = models.OneToOneField(People, on_delete=models.CASCADE)
     description = models.TextField(max_length=300, default=0)
-    post_writer = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    neighbourhood = models.ForeignKey(
-        Neighborhood, on_delete=models.CASCADE, null=True)
+    writer = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    neighborhood = models.ForeignKey(
+        Neighboorhood, on_delete=models.CASCADE, null=True)
 
     def save_profile(self):
         self.save()
@@ -81,7 +80,8 @@ class Business(models.Model):
     contact = models.CharField(max_length=12)
     business_image = models.ImageField(upload_to = 'images/',blank=True)
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
-    business_hood = models.ForeignKey(Neighborhood,on_delete=models.CASCADE,null=True)
+    business_hood = models.ForeignKey(
+        Neighboorhood, on_delete=models.CASCADE, null=True)
 
 
     def create_business(self):

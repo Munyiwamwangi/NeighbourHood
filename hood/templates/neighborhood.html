@@ -1,22 +1,15 @@
 {% extends 'base.html'%}
  {% block content %}
-
+{% include "navbar.html" %}
  <div class="container">
    <div class="row">
      <img src="{{image.image.url}}"  class="img-responsive" alt="image">
-   </div>
 
-   <div class="row">
-     <h1 style="font-style: italic;" class="text-center hd">{{image.title}}</h1>
-   </div>
+     <h1 style="font-style: italic;" class="text-center hd">{{hood_name.title}}</h1>
 
-   <div class="row hb">
      <p style="font-style: italic;">{{image.description}}</p>
-   </div>
 
-   <div class="row hbs">
-     <p>Posted {{image.editor.pub_date|timesince}} ago by {{image.editor.name}}</p>
+     <p>Posted {{image.neighbor.pub_date|timesince}} ago by {{image.neighbor.name}}</p>
    </div>
  </div>
-
  {% endblock %}

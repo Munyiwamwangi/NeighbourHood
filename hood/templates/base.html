@@ -1,3 +1,4 @@
+
 {% load bootstrap3 %}
 {% load static %}
 <!DOCTYPE html>
@@ -15,27 +16,49 @@
 
   {% block styles %}
   {% bootstrap_css %}
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %} ">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %} ">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %} ">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-datepicker.css' %} ">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.timepicker.css' %} ">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/ionicons/css/ionicons.min.css' %} ">
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/flaticon/font/flaticon.css' %} ">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %} ">
   {% endblock %}
-
 </head>
 
+
+
 <body>
+  <header>
+    
+  </header>
   <style>
     body{
       background-color:lightgrey;
     }
   </style>
  {% block content %}
-{% include "navbar.html" %}
-
  <h5 style="color: green;" class='text-center'>Posted: {{date|date:"l d-F Y"}}</h5>
- 
- {%endblock%}
+ {% endblock %}
 
+
+ {% comment %} styling {% endcomment %}
  {% block scripts %}
  {% bootstrap_javascript %}
+ <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+ <script src="{% static 'js/popper.min.js' %}"></script>
+ <script src="{% static 'js/bootstrap.min.js' %}"></script>
+ <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+ <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+ <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+ <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+ <script src="{% static 'js/main.js' %}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
  {% endblock %}
