@@ -6,7 +6,7 @@ from django.contrib.auth.models import User, UserManager
 
 
 class Neighborhood(models.Model):
-    hood_image = models.ImageField(upload_to='images/',  hooddefault='default.jpg')
+    hood_image = models.ImageField(upload_to='images/',  blank=True)
     hood_name = models.CharField(max_length=20)
     hood_location = models.CharField(max_length=20)
     hood_occupants = models.IntegerField(default=0)
@@ -56,7 +56,7 @@ class Neighbor(models.Model):
         return f'{Neighbor}'
 
 class Post(models.Model):
-    writer = models.ManyToManyField(User, on_delete=models.CASCADE, null=True)
+    writer = models.ManyToManyField(User, null=True)
     title = models.CharField(max_length=70)
     contact = models.OneToOneField(Neighbor, on_delete=models.CASCADE)
     description = models.TextField(max_length=300, default=0)
