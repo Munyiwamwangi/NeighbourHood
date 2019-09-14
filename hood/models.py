@@ -32,11 +32,11 @@ class Neighborhood(models.Model):
 
 
 class Neighbor(models.Model):
-    name = models.CharField(max_length=70)
+    name = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    email = models.CharField(max_length=20)
+    contact = models.CharField(max_length=12)
     profile_picture = models.ImageField(upload_to='images/', default = 'profdefault.jpg')
     bio = models.CharField(max_length=70)
-    contact = models.CharField(max_length=12)
-    the_neighbor = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     neighborhood = models.ForeignKey(
         Neighborhood, on_delete=models.CASCADE, null=True)
 
@@ -45,6 +45,8 @@ class Neighbor(models.Model):
 
     def delete_profile(self):
         self.delete()
+    class Meta:
+        ordering = ['-id']
 
     def update_bio(self, bio):
         self.bio = bio
@@ -52,3 +54,42 @@ class Neighbor(models.Model):
 
     def __str__(self):
         return f'{Neighbor}'
+
+class Post(models.Model):
+    writer = models.ManyToManyField(User, on_delete=models.CASCADE, null=True)
+    title = models.CharField(max_length=70)
+    contact = models.OneToOneField(Neighbor, on_delete=models.CASCADE)
+    description = models.TextField(max_length=300, default=0)
+    post_writer = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    neighbourhood = models.ForeignKey(
+        Neighborhood, on_delete=models.CASCADE, null=True)
+
+    def save_profile(self):
+        self.save()
+
+    def delete_profile(self):
+        self.delete()
+
+    class Meta:
+        ordering = ['-id']
+
+
+class Business(models.Model):
+    business_name = models.CharField(max_length = 20)
+    business_email = models.CharField(max_length = 20)
+    description = models.TextField(max_length=300,default=0)
+    contact = models.CharField(max_length=12)
+    business_image = models.ImageField(upload_to = 'images/',blank=True)
+    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+    business_hood = models.ForeignKey(Neighborhood,on_delete=models.CASCADE,null=True)
+
+
+    def create_business(self):
+        self.create()
+
+    def delete_business(self):
+        self.delete()
+
+    def update_business(self,business):
+        self.business = business
+        self.update()
