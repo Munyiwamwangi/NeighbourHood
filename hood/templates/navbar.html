@@ -1,61 +1,54 @@
 {% extends 'base.html' %}
 {% block content %}
 
-	<div>
-			<nav style="background-color:green; color:cyan" class="mb-1 navbar navbar-expand-lg navbar-dark ">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-				aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="navbar-brand" href="{% url 'nyumbani' %}">NEIGHBOORHOOD</a>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="navbar-brand" href="{% url 'nyumbani' %}">Join Us</a>
-				</li>
-				<li class="nav-item">
-					<a class="navbar-brand" href="{% url 'about' %}">About</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-					aria-haspopup="true" aria-expanded="false">Filter
-				</a>
-				<div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-					<a class="dropdown-item" href="{% url 'nyumbani' %}">Todays</a>
-					<a class="dropdown-item" href="{% url 'search_results' %}">Category</a>
-					<a class="dropdown-item" href="#">Location</a>
+	<div style="display: flex;" class="navbar-nav ml-auto nav-flex-icons container-fluid ">
+		<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light ">
+			<div class="collapse navbar-collapse col-6 col-md-6 col-sm-6 col-lg-6" id="navbarSupportedContent-333">
+					<ul class="navbar-nav mr-auto">
+							<li class="nav-item active">
+								<a class="navbar-brand" href="{% url 'nyumbani' %}">NEIGHBOORHOOD</a>
+							</li>
+							<li class="nav-item">
+								<a class="navbar-brand" href="{% url 'nyumbani' %}">Join Us</a>
+							</li>
+							<li class="nav-item">
+								<a class="navbar-brand" href="{% url 'about' %}">About</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="false">Filter
+								</a>
+								<div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+									<a class="dropdown-item" href="{% url 'nyumbani' %}">Todays</a>
+									<a class="dropdown-item" href="{% url 'search_results' %}">Category</a>
+									<a class="dropdown-item" href="#">Location</a>
+								</div>
+							</li>
+					</ul>
+			</div>
+			<div class="col-md-6 col-sm-6 col-7 text-right">
+              <p class="mb-0">
+                <a href="#" class="cta-btn" data-toggle="modal" data-target="#modalAppointment">Make an Appointment</a></p>
+            </div>
+		</nav>
+		<nav class="row container-fluid">
+				<div style="display: inline-flex;"  class="col-4 col-sm-4 col-md-4">
+					<form style="float: left;" class="fl form-inline my-1 nav-item navbar-brand navbar-collapse" role="search" action="{% url 'search_results' %}">
+						<div class="md-form form-sm my-0">
+							<input class="form-control form-control-sm mr-sm-2 mb-0" type="text" placeholder="Search" name='image'
+							aria-label="Search">
+						</div>
+						<button class="btn btn-outline-white btn-sm my-0 hidden" type="submit">Search Category
+						</button>
+					</form>
 				</div>
-			</li>
-		</ul>
-		<!-- <ul class="navbar-nav ml-auto nav-flex-icons">
-			<li class="nav-item">
-				<a class="nav-link waves-effect waves-light">
-					<i class="fab fa-twitter"></i>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link waves-effect waves-light">
-					<i class="fab fa-google-plus-g"></i>
-				</a>
-			</li>  -->
-			<!-- Adding a search form  -->
-			<form class="fl form-inline my-1" role="search" action="{% url 'search_results' %}">
-				<div class="md-form form-sm my-0">
-					<input class="form-control form-control-sm mr-sm-2 mb-0" type="text" placeholder="Search" name='image'
-					aria-label="Search">
+				<div class="col-4 col-sm-4 col-md-4"></div>
+
+				<div style="display: inline-flex;" class="col-4 col-sm-4 col-md-4 navbar-brand navbar-collapse">
+						<h5 class="nav-item nav-link glyphicon glyphicon-user  mr-sm-5"><a href="/accounts/signup"><span class=""></span> Sign Up</a></h5>
+						<h5 class="nav-item nav-link glyphicon glyphicon-log-in mr-sm-5"><a href="#"><span class=""></span> Login</a></h5>
 				</div>
-				<button class="btn btn-outline-white btn-sm my-0" type="submit">Search Category
-				</button>
-			</form>
-		</div>
-		<!-- search form end -->
-	</li>
-</ul>
-</nav>
+		</nav>
 </div>
-<!-- Navbar  ENDS -->
 
 {% endblock content %}
