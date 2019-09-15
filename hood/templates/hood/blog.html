@@ -1,15 +1,48 @@
-{% extends 'hood/base.html' %}
-{% block content %}
-{{block.super}}
-<head>
-	    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 
+{% load bootstrap3 %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  {% if title %}
+  <title>Neighborhood {{title}}</title>
+  {% else %}
+  <title> Neighborhood </title>
+  {% endif %}
+
+  {% block styles %}
+  {% bootstrap_css %}
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %} ">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %} ">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %} ">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-datepicker.css' %} ">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.timepicker.css' %} ">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/ionicons/css/ionicons.min.css' %} ">
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/flaticon/font/flaticon.css' %} ">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %} ">
+
+  {% endblock %}
 </head>
+
+{% block content %}
+
 <body class="row">
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'blogging' %}"> Neignboorhood </a>
+          <a class="navbar-brand mr-4" href="{% url 'blogging' %}"> Neighboorhood blog </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -43,7 +76,6 @@
             {% endfor %}
           {% endif %}
 
-          {% endblock %}
 
         </div>
       </div>

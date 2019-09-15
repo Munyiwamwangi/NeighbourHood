@@ -32,6 +32,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %} ">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
   {% endblock %}
 </head>
 
@@ -40,7 +42,7 @@
 <body>
  
  {% block content %}
- {% include "navbar.html" %}
+ {% include "hood/navbar.html" %}
 
  {% endblock %}
 
