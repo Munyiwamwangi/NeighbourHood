@@ -26,8 +26,14 @@ def blogging(request):
     'posts':Post.objects.all()
     }
 
-    return render(request, 'hood/home.html', context)
+    return render(request, 'hood/blog.html', context)
 
+class PostListView(ListView):
+    model = Post
+    template_name = 'hood/blog.html'  # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 5
 
 
 
