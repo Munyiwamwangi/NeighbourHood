@@ -10,8 +10,8 @@ from django.views.generic import (
     DeleteView
 )
 
-# Create your views here.
 
+# Create your views here.
 
 def about(request):
     return render(request, "hood/about.html")

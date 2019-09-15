@@ -64,6 +64,8 @@ INSTALLED_APPS = [
     'hood',
     'bootstrap4',
     'bootstrap3',
+    'crispy_forms',
+    'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -133,7 +135,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -142,6 +144,8 @@ USE_L10N = True
 USE_TZ = True
 
 LOGIN_REDIRECT_URL = '/posts/'
+LOGIN_URL = 'login'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
