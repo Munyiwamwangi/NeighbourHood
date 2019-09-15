@@ -9,7 +9,7 @@ from.models import Neighboorhood, People, Post, Business
 def about(request):
     return render(request, "hood/about.html")
 
-def nyumbani(request):
+def home(request):
     images = Neighboorhood.objects.all()
     return render(request, 'hood/neighborhood.html', {"images": images})
 

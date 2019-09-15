@@ -1,16 +1,19 @@
-from django.conf.urls import url
-from django.conf.urls.static import static  
-from django.conf import settings
-
-from . import views
+from django.urls import path
+from .import views
+from .views import (PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, UserPostListView )
 
 
-urlpatterns=[
-    path('',views.nyumbani, name='nyumbani'),
-    url(r'^about/$', views.about, name='about'),
-    url(r'^search/', views.search_results, name='search_results'),
 
+urlpatterns = [
+    path('',views.home, name='home'),
+    path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
+    path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
+    path('post/new/', PostCreateView.as_view(), name='post-create'),
+    path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
+    path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
+    path('about/', views.about, name='about'),
 ]
+
 
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
