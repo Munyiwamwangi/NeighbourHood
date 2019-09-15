@@ -1,7 +1,7 @@
 {% extends 'hood/base.html' %}
 {% block content %}
 {{block.super}}
-<div class="container-fluid">
+<div class="container-fluid select2-selection--single ">
   <div><h4 id="kileleshwa" class="text-center">Kileleshwa</h4></div>
   <div class="row">
     <div class="col-md-4 border-right element-animate img-fluid">
@@ -55,7 +55,7 @@
   <hr class="mb-2 mt-1">
 
   <!-- dynamic content -->
-  
+
   <div class="row element-animate nav-pills" >
     {% for hoods in images %}
     <div class="col-md-4" style="margin-top:10px;">

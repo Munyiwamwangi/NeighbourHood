@@ -1,14 +1,13 @@
 {% extends 'hood/base.html' %}
 {% block content %}
-
 <div style="display: flex;" class="navbar-nav ml-auto nav-flex-icons container-fluid row">
 	<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-light ">
 		<div class="collapse navbar-collapse col-6 col-md-6 col-sm-6 col-lg-6" id="navbarSupportedContent-333">
-			<ul style="color:black;"  class="navbar-nav mr-auto nav-tabs card-header-tabs">
-				<li class="nav-item active">
+			<ul class="navbar-nav mr-auto nav-tabs card-header-tabs">
+				<li style="color:black;"  class="nav-item active">
 					<a class="navbar-brand" href="{% url 'home' %}">NEIGHBOORHOOD</a>
 				</li>
-				<li class="nav-item">
+				<li style="color:black;"  class="nav-item">
 					<a class="navbar-brand" href="{% url 'about' %}">About</a>
 				</li>
 
@@ -21,7 +20,7 @@
 				</li>
 
 				<li class="nav-item dropdown">
-					<a class="nav-link nav-item navbar-brand dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+					<a class=" nav-link nav-item navbar-brand dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
 					aria-haspopup="true" aria-expanded="false">Neighboorhoods
 				</a>
 				<div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
@@ -33,14 +32,15 @@
 			</li>
 		</ul>
 	</div>
-	<div class="col-md-6 col-sm-6 col-7 text-right">
+	<div class="col-md-6 col-sm-6 col-7 text-right collapse navbar-collapse " id="navbarSupportedContent-333">
 		<li class="nav-item">
 			<a class="navbar-brand" href="{% url 'profile' %}">Account</a>
 		</li>
-		<p class="mb-0">
-			<a href="{% url 'home' %} " class="nav-item cta-btn btn-lg" >NAVIGATE HOME</a></p>
-		</div>
-	</nav>
+		<li class="mb-0">
+			<a href="{% url 'home' %} " class="nav-item cta-btn btn-lg" >NAVIGATE HOME</a>
+		</li>
+	</div>
+</nav>
 </div>
 
 <div class="row">
@@ -60,5 +60,6 @@
 			<a style="float: right;" class="glyphicon glyphicon-log-in mr-sm-5  nav-item nav-link" href="{% url 'logout' %}">Logout</a>
 		</div>
 	</nav>
+</div>
 </div>
 {% endblock content %}
