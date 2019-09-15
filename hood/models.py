@@ -56,12 +56,10 @@ class People(models.Model):
         return f'{People}'
 
 class Post(models.Model):
-    title = models.CharField(max_length=70)
-    contact = models.OneToOneField(People, on_delete=models.CASCADE)
-    description = models.TextField(max_length=300, default=0)
-    writer = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    neighborhood = models.ForeignKey(
-        Neighboorhood, on_delete=models.CASCADE, null=True)
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    date_posted = models.DateTimeField(default=timezone.now)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def save_profile(self):
         self.save()
@@ -69,6 +67,12 @@ class Post(models.Model):
     def delete_profile(self):
         self.delete()
 
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={'pk': self.pk})
+    
     class Meta:
         ordering = ['-id']
 

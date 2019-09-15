@@ -6,7 +6,7 @@ from . import views
 
 
 urlpatterns=[
-    url('^$', views.nyumbani, name='nyumbani'),
+    path('',views.nyumbani, name='nyumbani'),
     url(r'^about/$', views.about, name='about'),
     url(r'^search/', views.search_results, name='search_results'),
 

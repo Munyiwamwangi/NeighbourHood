@@ -7,11 +7,11 @@ from.models import Neighboorhood, People, Post, Business
 
 
 def about(request):
-    return render(request, "about.html")
+    return render(request, "hood/about.html")
 
 def nyumbani(request):
     images = Neighboorhood.objects.all()
-    return render(request, 'neighborhood.html', {"images": images})
+    return render(request, 'hood/neighborhood.html', {"images": images})
 
 
 def search_results(request):
@@ -22,9 +22,9 @@ def search_results(request):
             search_term)
         message = f"{search_term}"
 
-        return render(request, 'all-news/search.html', {"message": message, "neighboorhood": searched_neighboorhoods})
+        return render(request, 'hood/search.html', {"message": message, "neighboorhood": searched_neighboorhoods})
 
     else:
         message = "You haven't searched for any neighboorhood"
-        return render(request, 'search.html', {"message": message})
+        return render(request, 'hood/search.html', {"message": message})
 
