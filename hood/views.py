@@ -52,7 +52,6 @@ class PostDetailView(DetailView):
     model = Post
 
 
-
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content']
@@ -101,3 +100,7 @@ def search_results(request):
         message = "You haven't searched for any neighboorhood"
         return render(request, 'hood/search.html', {"message": message})
 
+# Business
+def businesses(request):
+    businesses = Business.objects.all()
+    return render(request, 'hood/businesses.html', {"businesses": businesses})

@@ -53,19 +53,28 @@
               <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKAhvv-FgSujhbXB_d45KBuO_9LpBtIY8cVWOzkEs8_HhnmKgT">
               <a target="blank" href="https://www.remax-kenya.co.ke/_/Nairobi_Metropolitan/Nairobi/Kilimani" class="card-link text-center">See More</a>
             </div>
-          </div>
-          
+        </div>
   </div>
   <hr class="mb-2 mt-1">
 
-   <div class="row">
-     <img src="{{image.image.url}}"  class="img-responsive" alt="image">
-
-     <h1 style="font-style: italic;" class="text-center hd">{{hood_name.title}}</h1>
-
-     <p style="font-style: italic;">{{image.description}}</p>
-
-     <p>Posted {{image.neighbor.pub_date|timesince}} ago by {{image.neighbor.name}}</p>
-   </div>
+<!-- dynamic content -->
+<div class="card card-image"
+style="background-image: url(https://images.unsplash.com/photo-1524813686514-a57563d77965?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80);">
+</div>
+<div class="row">
+  {% for hood in neighboorhood %}
+  <div class="col-md-4" style="margin-top:10px;">
+    <div class="card">
+      <div class="view overlay">
+        <img class="card-img-top" src="{{neighbour.image.url}}"alt="Card image cap">
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Name:<p class="Test">{{hood.name}}</p></h4>
+        <p class="card-text"><b>Location</b>: {{hood.location}} </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
  </div>
  {% endblock %}
