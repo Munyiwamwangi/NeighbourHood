@@ -20,6 +20,10 @@ def home(request):
     images = Neighboorhood.objects.all()
     return render(request, 'hood/neighborhood.html', {"images": images})
 
+def allneighborhoods(request):
+    allneighborhoods = Neighboorhood.objects.all()
+    return render(request, 'hood/neighborhood.html', {"allneighborhoods": allneighborhoods})
+
 def blogging(request):
 
     context={
