@@ -28,12 +28,24 @@ def blogging(request):
 
     return render(request, 'hood/blog.html', context)
 
+
 class PostListView(ListView):
     model = Post
     template_name = 'hood/blog.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 5
+
+
+class UserPostListView(ListView):
+    model = Post
+    template_name = 'pitch/user_posts.html'  # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    paginate_by = 5
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user).order_by('-date_posted')
 
 
 
