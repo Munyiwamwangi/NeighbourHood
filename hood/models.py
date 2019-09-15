@@ -17,7 +17,7 @@ class Neighboorhood(models.Model):
 
 
     def __str__(self):
-        return self.location
+        return self.hood_location
     
     def save_hood(self):
         self.save()

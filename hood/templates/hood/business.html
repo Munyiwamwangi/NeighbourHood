@@ -1,25 +1,26 @@
 {% extends 'hood/base.html' %}
 {% block content %}
 {{block.super}}
-<div class="container">
-<h4>Businesses Around</h4>
-  <div class="row">
-    <div class="row">
-      <div class="col-md-4">
-        {% for business in businesses %}
-        <div class="col-md-4" style="margin-top:10px;">
-          <div class="card">
-            <div class="view overlay">
-              <img class="card-img-top" src="{{business.business.business_image.url}}"
-              alt="Card image cap">
-            </div>
-            <div class="card-footer">
-              <h4 class="card-title">Name: <p class="Test">{{business.business_name}}</p></h4>
-              <p class="card-text"><b>Neighboorhood</b>: {{business.business_hood}} </p>
-              <p class="card-text"><b>Description</b>:{{business.description}}</p>
-              <p class="card-text"><b>contact</b>:{{business.contact}}</p>
-            </div>
-          </div>
+<div class="container-fluid">
+  <h4>Businesses Around</h4>
+  <div  class="">
+    {% for business in businesses %}
+      <div class="card">
+        <div>
+          <h4 class="card-title">Name: <p class="Test">{{business.business_name}}</p></h4>
+        <p class="card-text"><b>contact</b>:{{business.contact}}</p>
         </div>
-        {% endfor %}
-        {% endblock  %}
+        <div class="view overlay">
+          <img class="card-img-top" src="{{business.business_image.url}}"
+          alt="Card image cap">
+        </div>
+        <div>
+          <p class="card-text"><b>Neighboorhood</b>: {{business.business_hood}} </p>
+          <p class="card-text"><b>Description</b>:{{business.description}}</p>
+        </div>
+      </div>
+  </div>
+</div>
+<hr>
+{% endfor %}
+{% endblock  %}

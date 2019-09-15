@@ -16,13 +16,11 @@ from django.views.generic import (
 def about(request):
     return render(request, "hood/about.html")
 
+
 def home(request):
     images = Neighboorhood.objects.all()
     return render(request, 'hood/neighborhood.html', {"images": images})
 
-def allneighborhoods(request):
-    allneighborhoods = Neighboorhood.objects.all()
-    return render(request, 'hood/neighborhood.html', {"allneighborhoods": allneighborhoods})
 
 def blogging(request):
 
@@ -107,4 +105,4 @@ def search_results(request):
 # Business
 def businesses(request):
     businesses = Business.objects.all()
-    return render(request, 'hood/businesses.html', {"businesses": businesses})
+    return render(request, 'hood/business.html', {"businesses": businesses})

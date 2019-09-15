@@ -1,81 +1,78 @@
 {% extends 'hood/base.html' %}
 {% block content %}
 {{block.super}}
-
- <div class="container-fluid">
-  <div><h4 class="text-center">Kileleshwa</h4></div>
-
+<div class="container-fluid">
+  <div><h4 id="kileleshwa" class="text-center">Kileleshwa</h4></div>
   <div class="row">
     <div class="col-md-4 border-right element-animate img-fluid">
-            <div class="nav card flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><span></span> Kileleshwa</a>
-              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM_eLPT0NprMfHWJBdSDFAN9hHdZkQX_XN3XWQM4j2m51rvnv61g">
-              <a target="blank" href="https://www.buyrentkenya.com/news/kileleshwa-neighbourhood-guide/" class="card-link text-center">See More</a>
-            </div>
-          </div>
-          <div class="col-md-4 border-right element-animate">
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><span></span> Average House Outlook </a>
-              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqcWR5c3e5yXWK6m0pfQ3PqhAQ5xuV31pBHGJ-8q8K2BrONvi2cg">
-              <a target="blank" href="https://www.buyrentkenya.com/news/kileleshwa-neighbourhood-guide/" class="card-link text-center">See More</a>
-            </div>
-          </div>
-          <div class="col-md-4 border-right element-animate">
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><span></span> Environments </a>
-              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDC3O0YaDSizgGMhRlfxuE5g7m0J5egRsAa9kgHn6GIIeaZf98">
-              <a href="https://www.buyrentkenya.com/news/kileleshwa-neighbourhood-guide/" class="card-link text-center">Kileleshwa Neighbourhood Guide</a>
-
-            </div>
-          </div>
-  </div>
-  <hr>
-  <div><h4 class="text-center">Kilimani</h4></div>
-    <div class="row">
-      <div class="col-md-4 border-right element-animate">
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="false"><span></span> Kilimani </a>
-              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCczv-fHbcYA9S8oNicSnwe-c5yjhaZqgySKfVjMIBopmyXzvm">
-              <a target="blank" href="https://www.remax-kenya.co.ke/_/Nairobi_Metropolitan/Nairobi/Kilimani" class="card-link text-center">See More</a>
-
-            </div>
-          </div>
-         <div class="col-md-4 border-right element-animate">
-            <div class="nav card flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="true"><span></span> Average House Outlook </a>
-              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdgdBaUUQiCes0Uh5Gy54AcAKDRB9vqHxq49n94qy-XecS7AQ6">
-              <a target="blank" href="https://www.remax-kenya.co.ke/_/Nairobi_Metropolitan/Nairobi/Kilimani" class="card-link text-center">Neighbourhood Guide</a>
-            </div>
-          </div>
-          <div class="col-md-4 border-right element-animate">
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><span></span> Environments</a>
-              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKAhvv-FgSujhbXB_d45KBuO_9LpBtIY8cVWOzkEs8_HhnmKgT">
-              <a target="blank" href="https://www.remax-kenya.co.ke/_/Nairobi_Metropolitan/Nairobi/Kilimani" class="card-link text-center">See More</a>
-            </div>
-        </div>
-  </div>
-  <hr class="mb-2 mt-1">
-
-<!-- dynamic content -->
-<div class="card card-image"
-style="background-image: url(https://images.unsplash.com/photo-1524813686514-a57563d77965?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80);">
-</div>
-<div class="row">
-  {% for hoods in allneighborhoods %}
-  <div class="col-md-4" style="margin-top:10px;">
-    <div class="card">
-      <div class="view overlay">
-        <img class="card-img-top" src="{{hoods.hood_image.url}}"alt="neighboorhood image">
+      <div class="nav card flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><span></span> Kileleshwa</a>
+        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM_eLPT0NprMfHWJBdSDFAN9hHdZkQX_XN3XWQM4j2m51rvnv61g">
+        <a target="blank" href="https://www.buyrentkenya.com/news/kileleshwa-neighbourhood-guide/" class="card-link text-center">See More</a>
       </div>
-      <div class="card-footer">
-        <h4 class="card-title">Neighboorhood name: <p class="Test">{{hoods.hood_name}}</p></h4>
-        <p class="card-text"><b>Location: </b>: {{hoods.hood_occupants}} </p>
+    </div>
+    <div class="col-md-4 border-right element-animate">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><span></span> Average House Outlook </a>
+        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqcWR5c3e5yXWK6m0pfQ3PqhAQ5xuV31pBHGJ-8q8K2BrONvi2cg">
+        <a target="blank" href="https://www.buyrentkenya.com/news/kileleshwa-neighbourhood-guide/" class="card-link text-center">See More</a>
+      </div>
+    </div>
+    <div class="col-md-4 border-right element-animate">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><span></span> Environments </a>
+        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDC3O0YaDSizgGMhRlfxuE5g7m0J5egRsAa9kgHn6GIIeaZf98">
+        <a href="https://www.buyrentkenya.com/news/kileleshwa-neighbourhood-guide/" class="card-link text-center">Kileleshwa Neighbourhood Guide</a>
       </div>
     </div>
   </div>
-  {% endfor %}
-</div>
- </div>
+  <hr>
+  <div><h4 id="kilimani" class="text-center">Kilimani</h4></div>
+  <div class="row">
+    <div class="col-md-4 border-right element-animate">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="false"><span></span> Kilimani </a>
+        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCczv-fHbcYA9S8oNicSnwe-c5yjhaZqgySKfVjMIBopmyXzvm">
+        <a target="blank" href="https://www.remax-kenya.co.ke/_/Nairobi_Metropolitan/Nairobi/Kilimani" class="card-link text-center">See More</a>
 
- {% endblock %}
+      </div>
+    </div>
+    <div class="col-md-4 border-right element-animate">
+      <div class="nav card flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="true"><span></span> Average House Outlook </a>
+        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdgdBaUUQiCes0Uh5Gy54AcAKDRB9vqHxq49n94qy-XecS7AQ6">
+        <a target="blank" href="https://www.remax-kenya.co.ke/_/Nairobi_Metropolitan/Nairobi/Kilimani" class="card-link text-center">Neighbourhood Guide</a>
+      </div>
+    </div>
+    <div class="col-md-4 border-right element-animate">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><span></span> Environments</a>
+        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKAhvv-FgSujhbXB_d45KBuO_9LpBtIY8cVWOzkEs8_HhnmKgT">
+        <a target="blank" href="https://www.remax-kenya.co.ke/_/Nairobi_Metropolitan/Nairobi/Kilimani" class="card-link text-center">See More</a>
+      </div>
+    </div>
+  </div>
+  <hr class="mb-2 mt-1">
+
+  <!-- dynamic content -->
+  
+  <div class="row element-animate nav-pills" >
+    {% for hoods in images %}
+    <div class="col-md-4" style="margin-top:10px;">
+      <div style="height: 18rem;" class="card">
+        <div>
+          <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="true"><span></span> Neighboorhood name: <p class="Test">{{hoods.hood_name}}</p></a>
+        </div>
+        <div class="view overlay">
+          <img class="card-img-top" src="{{hoods.hood_image.url}}"alt="Neighboorhood image">
+        </div>
+        <div class="card-footer">
+          <p class="card-text"><b>Location:</b>{{hoods.hood_location}} </p>
+          <p class="card-text"><b>Residents: </b>:{{hoods.hood_occupants}} </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
