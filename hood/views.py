@@ -1,7 +1,14 @@
-import datetime as dt
-from django.shortcuts import render, redirect
-from django.http import HttpResponse, Http404
-from.models import Neighboorhood, People, Post, Business
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User
+from .models import Neighboorhood, Comment, Post, Business
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView
+)
 
 # Create your views here.
 
@@ -12,6 +19,16 @@ def about(request):
 def home(request):
     images = Neighboorhood.objects.all()
     return render(request, 'hood/neighborhood.html', {"images": images})
+
+def blogging(request):
+
+    context={
+    'posts':Post.objects.all()
+    }
+
+    return render(request, 'hood/home.html', context)
+
+
 
 
 def search_results(request):
