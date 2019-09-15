@@ -6,7 +6,7 @@ from .views import (PostListView, PostDetailView, PostCreateView, PostUpdateView
 
 urlpatterns = [
     path('',views.home, name='home'), #for neighboorhoods
-    path('',views.posting, name='posting'), #for posts
+    path('',views.posting, name='blogging'), #for posts
 
     path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
