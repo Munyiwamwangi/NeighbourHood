@@ -39,8 +39,8 @@
 {% block content %}
 
 <body class="container-fluid">
-    <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <header style="display: inline-flex; color: cyan; padding-left: 5%" class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container">
           <a class="navbar-brand mr-4" href="{% url 'blogging' %}"> Neighboorhood blog </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,11 +85,11 @@
 <div class="container-fluid ">
 	{% for post in posts %}
         <article class="media content-section">
-          <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
-          <div class="media-body">
+          <img style="width: 150px; height:150px;" class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+          <div class="ml-5 media-body">
             <div class="article-metadata">
               <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+              <small class="text-muted">@{{ post.date_posted|date:"F d, Y" }}</small>
             </div>
             <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
             <p class="article-content">{{ post.content }}</p>
