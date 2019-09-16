@@ -71,6 +71,13 @@ class Business(models.Model):
     def delete_business(self):
         self.delete()
 
+    @classmethod
+    def get_business(cls, id):
+        business = Business.objects.filter(hood__pk=id)
+        return business
+
     def update_business(self,business):
         self.business = business
         self.update()
+        
+
