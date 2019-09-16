@@ -2,6 +2,10 @@
 
 ## Author Joe Munyi Mwangi
 
+## Live app at <https://joeneiba.herokuapp.com/>
+
+Click to view <https://joeneiba.herokuapp.com/>
+
 ## Description
 
 This web-app that allows one to choose, change and see whats happening around their neirboorhood. Access social services, security and other ammenitues as well as shopping places.
