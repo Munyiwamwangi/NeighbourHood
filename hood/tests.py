@@ -24,14 +24,7 @@ class NeighbourhoodTestClass(TestCase):
         self.assertTrue(len(Neighboorhood.objects.all()) > 0)
 
     def test_init(self):
-        self.assertTrue(self.new_neighbourhood.name == 'runda')
-
-    def test_delete_neighbourhood(self):
-        self.new_neighbourhood.save_neighbourhood()
-        neighbourhoods = Neighboorhood.objects.all()
-        self.new_neighbourhood.delete_neighbourhood()
-        self.assertTrue(len(neighbourhoods) == 0)
-
+        self.assertTrue(self.new_neighbourhood.name == 'karen')
 
 class ProfileTestClass(TestCase):
 
