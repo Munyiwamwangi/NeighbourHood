@@ -71,10 +71,6 @@ Here is a link to a live demo: <https://joeneiba.herokuapp.com/>
 * CSS
 * Django framework
 
-## Support and contact details
-
-If you have any issues feel free to contact me at brayomumo5@gmail.com.
-
 ## License
 
 MIT License. Copyright (c) 2018 _Joe Munyi Munyi._
